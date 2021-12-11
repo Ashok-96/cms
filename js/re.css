@@ -1,0 +1,16 @@
+.jumbotron{
+        margin-left: 4rem;
+         background: rgba(00, 54, 54, 0.1);
+    }
+.container{
+    text-align: center;
+        color: black;
+}
+.text-monospace{
+text-decoration: underline;
+
+}
+img{
+	
+	width: 275px;
+}
