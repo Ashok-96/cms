@@ -71,11 +71,7 @@ function listUsers($sql,$date,$day){
         <input class="btn btn-success shadow rounded-pill" type="submit" name="submit" value="Mark page '.$_GET['PGN'].' attendance"></td>';
       }
   }
-    echo '</td>
-    </tr>  
-    </table>
-    </form>
-    ';
+  
 
   }
 }

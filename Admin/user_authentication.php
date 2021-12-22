@@ -1,51 +1,28 @@
-
 <?php
+require 'db/dbutil.php';
+	$db=new dbutil();
 if (isset($_POST['submit'])) {
+	$username=$_POST['username'];
+	$password=md5($_POST['password']);
+	$sql = "SELECT * FROM `admin` WHERE `username`='".$username."' AND  `password` ='".$password."'";
+	$res=$db->queryRequest($sql);
+	if ($res->num_rows>0) {
 if (isset($_POST['classes'])) {
-	if ($_POST['classes']=='---selectclass---') {
-		header("Location:index.php?please select class");
-	}else{
-$sub=$_POST['classes'];
-	$username=$_POST['username'];
-	$password=md5($_POST['password']);
- 	require 'db/dbutil.php';
- 	$db=new dbutil();
- 	session_start();
-$sql = "SELECT * FROM `admin` WHERE username='$username' AND  `password` ='$password'";
-				$result=$db->queryRequest($sql);
-				if ($result->num_rows > 0){
-    			while($row = $result->fetch_assoc()) {
-        			if( ($row['username'] == $username ||$row['email'] == $username) && $row['password'] == $password ){
-        				$_SESSION["Teacher"] = $row['name'];
-        				$_SESSION["class"]=$sub; 
-			header("Location:teacher.php");
+	session_start();
+	$_SESSION['Teacher']=$username;
+	$_SESSION['class']=$_POST['classes'];
+ header('Location:./teacher.php');
+			// code...
 }else{
-			header("Location:index.php?status=sorry");
-
-		}
-}
-}
-}
-}else{
+	session_start();
+	$_SESSION['admin']=$username;
+ header('Location:./ahome.php');
 	
-	$username=$_POST['username'];
-	$password=md5($_POST['password']);
- 	require 'db/dbutil.php';
- 	$db=new dbutil();
- 	session_start();
-$sql = "SELECT * FROM `admin` WHERE username='$username' AND password ='".$password."'";
-				$result=$db->queryRequest($sql);
-				if ($result->num_rows > 0){
-    			while($row = $result->fetch_assoc()) {
-        			if( ($row['username'] == $username ||$row['email'] == $username) && $row['password'] == $password ){
-        				$_SESSION["admin"] = $row['name'];
-			header("Location:ahome.php?status=success");
-}else{
-			header("Location:index.php?status=sorry");
 
-		}
 }
+		}	
+}else{
+	echo "welcome !";
+
 }
-}
-}
-?>
+  ?>

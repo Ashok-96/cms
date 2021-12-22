@@ -83,9 +83,7 @@ echo "<tr>";
 <script type="text/javascript" src="js/datatables.bootstrap4.min.js"></script>
   <script >
   $(function(){
-    $("#example").DataTable({
- 
-    });
+    $("#example").DataTable();
   });
 </script>
 

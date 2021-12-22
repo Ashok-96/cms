@@ -1,6 +1,7 @@
 
 <?php 
 session_start();
+ob_start();
 if (isset($_SESSION)) {
 ?>
 <!DOCTYPE html>
@@ -42,6 +43,7 @@ font-family: 'Baumans', cursive;
       <i style="position: absolute;  left: 80px; top: 148.7px;" class="fa fa-3x fa-cog fa-spin spin-reverse"></i>
  </div>
  <div>
+
   <span  style="  position: absolute;
   left: 40%;
   top: 55%;"><b></b></span>
@@ -49,6 +51,16 @@ font-family: 'Baumans', cursive;
 </div>
 	<?php include'topbar.php';  ?>
 <div class="container ">
+	<?php if (isset($_GET['status'])) {
+	 ?>
+<div class="alert alert-success alert-dismissible fade show mt-0" role="alert">
+	Help Escalated successfully 
+  <strong><?php echo $_GET['ref']; ?></strong> is Ticket id for further reference..!
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
 		<div class="row " id="myDiv" >
 	 <img class="col-lg-7 p-3" src="im/support.jpg">
 			<div class="col-lg-4">
@@ -81,34 +93,31 @@ font-family: 'Baumans', cursive;
 </form>
 </div>
 <?php
-$nos=date('dmyy');
+echo date('dmyyhms');
+require './db/dbutil.php';
+$db = new DButil();
+$nos=date('dmyyhms');
 $con= mysqli_connect("localhost","root","","users");
-$folder="attachments/";
+$folder="./attachments/";
  $ids="TKT".str_shuffle($nos);
 if (isset($_POST['submit'])) {
-	if (!empty($_POST["category"])) {
+if (!empty($_POST["category"])) {
 	$category=htmlspecialchars( $_POST['category']);
 	$details=htmlspecialchars( $_POST['details']);
 	$scat= htmlspecialchars( $_POST['scategory']);
 	$file=$_FILES['attachment']['name'];
 	$ftemp=$_FILES['attachment']['tmp_name'];
 	$uid=$_SESSION["userID"];
-$query=mysqli_query($con,"INSERT INTO `complaints`( `tkt_id`,`userid` ,`category`, `sub_category`,`details`) VALUES ('".$ids."','".$uid."','".$category."','".$scat."','".$details."')");
-if ($query) {
-	
-		move_uploaded_file($ftemp, $folder.$file);
-  ?>			
-<div class="alert alert-success alert-dismissible fade show mt-0" role="alert">
-	Help Esculated successfully 
-  <strong><?php echo $ids; ?></strong> is Ticket id for further reference..!
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
+$query="INSERT INTO `complaints`( `tkt_id`,`userid` ,`category`, `sub_category`,`details`) VALUES ('".$ids."','".$uid."','".$category."','".$scat."','".$details."')";
+$res=$db->queryRequest($query);
+	if ($res) {
+header('Location:./help.php?status=successful&&ref="'.$ids.'"');
+		?>
 <?php }else {
+header('Location:./help.php?status=sorry');
 	echo '<div class="alert alert-success alert-dismissible fade show mt-0" role="alert">
 	Help Esculation is not successful 
-  <strong><?php echo $ids; ?></strong> is Ticket id for further reference..!
+  <strong><?php echo $ids; ?></strong> "'.$ids.'"is Ticket id for further reference..!
   <a href="help.php"  data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </a>
@@ -125,11 +134,10 @@ if ($query) {
 }
 }
 }
+ob_flush();
 ?>
 </div>
 </div>
 </div>
-
-
 </body>
 </html>

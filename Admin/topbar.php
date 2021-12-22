@@ -102,7 +102,7 @@ nav{
      <div class="collapse d-lg-block " id="atd">
     <div class="d-flex flex-wrap">
      
-      <a class=" nav-link active" href="attendance.php?date=<?php echo date('d-M-yy'); ?>"><span class="fa fa-check-square-o"></span> Mark Attendance</a>
+      <a class=" nav-link active" href="attendance.php?date=<?php echo date('d-M-Y'); ?>"><span class="fa fa-check-square-o"></span> Mark Attendance</a>
     </div> 
      </div>
 <?php  } ?>

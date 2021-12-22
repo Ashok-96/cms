@@ -9,12 +9,9 @@ if(isset($_SESSION["Teacher"])) {
   date_default_timezone_set('Asia/Kolkata');
         $class=$_SESSION["class"];
 if (isset($_GET['date'])) {
-  explode('-',$_GET['date']);
   $date=$_GET['date'];
-     
-
 }else{
-  $date=date('d-M-yy');
+  $date=date('d-M-Y');
 }
 
   $db = new Attendance;
@@ -105,7 +102,7 @@ if(isset($_GET['PGN'])){
     </li>
   </ul>
 
-  <form method="post" action="attendance.php?PGN=<?php echo $id."&date=".$date;?>">
+  <form  action="./attendance.php?PGN=<?php echo $id."&date=".$date;?>" method="POST">
     <table class="table table-bordered  mt-3 float-right">
       <thead>
         <th>Id</th>
@@ -123,30 +120,38 @@ $class= strtolower($_SESSION['class']);
           $per_page=10;
           $nos_page=$strenght/10;
           $start=($id-1)*10;
-          $sql="SELECT * FROM `$class` a JOIN `users` b ON a.id=b.id ORDER BY b. `name` ASC LIMIT $start,$per_page";
+          $sql="SELECT `users`.`name`, `$class`.`id`,`$class`.`$date` FROM `$class` INNER JOIN `users`  ON `users`.`id`=`$class`.`id` ORDER BY `users`.`name` ASC LIMIT $start,$per_page";
           $ak->listUsers($sql,$date,$day);
           ?>
   </div>
+  </tbody>
+</table>
+<input type="submit" name="submit" value="submit">
+</form>
     <div class="col-lg-5 p-5">
    
    <ul class="list-group shadow">
   <li class="list-group-item"><h4><?php echo $date;  ?>'s Report</h4></li>
 <li class="list-group-item "><span class="fa fa-calendar"></span> <b> Date: <?php echo $date;  ?> </b></li>
   <li class="list-group-item"><b> Total Strength: <?php echo $strenght;  ?> </b></li>
-  <li class="list-group-item"> <b> Occupancy
- <?php  $psql="SELECT * FROM `$class` WHERE `$date`='Present' ";
+  <?php  $psql="SELECT * FROM `$class` WHERE `$date`='Present' ";
           $re=$ak->query($psql);     
             $pc=$re->num_rows;
-            echo ceil(($pc/$strenght)*100).'%';
-            ?></b> </li>
+            ?>
+  <li class="list-group-item"> <b class="text-success"><?php echo ceil(($pc/$strenght)*100) ?>% </b> </b> </li>
    <?php 
   if(ceil(($pc/$strenght)*100)>=75){
-    echo '<b class="text-success">'.ceil(($pc/$strenght)*100).'% <span>  <img class=" col-5" src="../im/stamp.jpg"> </span>';
+    ?>
+<div class="d-flex justify-content-around">
+  
+</div>
+  <span class="mt-3"></span>  <span>  <img class=" col-5" src="../im/stamp.jpg"> </span>
+   <?php 
   }
       ?>  </b></li>
 
 
-  <li class="list-group-item"><b> Shirnkage  <?php echo ceil(($strenght-$pc)/$strenght*100).'%';  ?> </b></li>
+  <li class="list-group-item"><b> Shrinkage  <?php echo ceil(($strenght-$pc)/$strenght*100).'%';  ?> </b></li>
 </ul>
   <div class="form-group p-2 ">
     <b>
@@ -155,8 +160,9 @@ $class= strtolower($_SESSION['class']);
       <option>---Marked_Days---</option>
       <?php
 
-      $f=date('yy');
-      $chcs="SHOW COLUMNS FROM `$class`  WHERE  `Field` REGEXP '$f'  ";
+      $f=date('y');
+      echo $f;
+      $chcs="SHOW COLUMNS FROM `$class`   ";
           $cse=$db->queryRequest($chcs);
 
           while ($row=$cse->fetch_assoc()) {
@@ -170,10 +176,11 @@ $class= strtolower($_SESSION['class']);
            } ?>    
     </select>
   </div>
-   <?php       if ($date!=date('d-M-yy')) {
-    echo "<a href='".$_SERVER["PHP_SELF"]."?date=".date('d-M-yy')."' class='btn btn-primary'>current date </a>";
+   <?php       if ($date!=date('d-M-Y')) {
+    echo "<a href='".$_SERVER["PHP_SELF"]."?date=".date('d-M-Y')."' class='btn btn-primary'>current date </a>";
   }?>
 </div>
+
   <?php
   
 if (isset($_POST['submit'])) {
