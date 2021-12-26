@@ -11,6 +11,8 @@
 <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap4.min.css"/>
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+
 </head>
 <?php
 include 'db/dbutil.php';
@@ -21,11 +23,11 @@ include 'db/dbutil.php';
   }
 </style>
 <body>
-<div class="container p-3">
+<div class="container p-2">
   <div class="row">
-  <div class="col-lg-8">
+  <div class="col-lg-auto">
        <div class="table-responsive   ">
-<table id="example" class=" rounded-lg nowrap table table-striped table-sm table-bordered "   >
+<table id="example" class="table table-bordered"   >
      <thead>
        <th>Action</th>  
       <th>Attachment</th>
@@ -46,44 +48,21 @@ include 'db/dbutil.php';
         }
           $db=new dbutil();
           $res=$db->queryRequest($sql);
-          if(!$res){
-
-          }else{
           while ($row=$res->fetch_assoc()) { 
-          echo'<tr>';
-            if ($row['stage']!='Closed') {
-          echo ' <td class="text-center"><a href="read_message.php?op=edit" class="nav-link active" >Edit</td>
-          ';
-}else{
-  echo '<td class="text-center"><b>Not allowed</b></td>';
-}
-if ($row['attachment']) {
-            echo "<td>";
-            echo "<a class='text-info' href='../attachments/".$row['attachment']."'  p-2 text-white text-center' download>".$row['attachment'];
-            echo "</a></td>";  
-}else{
-              echo "<td>";
-            echo "<a class='text-center'>------</a>";
-            echo "</td>";
-}
+          echo'<tr><td>';
+          echo '<a href="../read_details.php?id='.$row['tkt_id'].' " class="nav-link active" >'.$row['tkt_id'].'</a>';
+          echo'</td>';
+                    echo'<td>';
+          echo $row['attachment'];
+          echo'</td>';
+                    echo'<td>';
+          echo $row['stage'];
+          echo'</td>';
+                    echo'<td>';
+          echo '<a href="read_message.php?op=edit&&id='.$row['tkt_id'].' " class="nav-link active" >'.$row['tkt_id'].'</a>';
+          echo'</td> </tr>';
+      }
 
-
-            echo "<td>";
-            if ($row['stage']=="Attended") {
-            echo "<a class='badge badge-info p-2 text-white text-center'>".$row['stage'];
-            }else if ($row['stage']=="Closed") {
-            echo "<a class='badge badge-danger p-2 text-white text-center'>".$row['stage'];
-              
-            }else if ($row['stage']=="Pending") {
-            echo "<a class='badge badge-warning p-2 badge-pill text-dark text-center'>".$row['stage'];
-              
-            }
-            echo "</td>";
-             echo "<td>";
-            echo "<a class='alert-link' href='../read_details.php?id=".$row['tkt_id']."'>".$row['tkt_id']."</a>";
-            echo "</td>";
-            echo "</tr>";
-          
              ?>
         </tbody>
     </table>
@@ -96,19 +75,19 @@ if ($row['attachment']) {
    $var=$_GET['op'];
     if ($var=='edit') {
      ?>
-   <div class="col-lg-4">
+   <div class="col-lg-12">
        <img class="col-lg-auto" src="../im/admin.gif">
-    <form class="form-group p-3" method="post" action="edit-tkt.php">
+    <form class="form-group p-3" enctype="multipart/form-data" method="post" action="edit-tkt.php">
           <label for="tktid">Ticket ID</label>
-          <input type="text" class="form-control bg-white" name="tktid" value="<?php  echo $row['tkt_id'] ?>" readonly>
+          <input type="text" class="form-control bg-white" name="tktid" value="<?php  echo $_GET['id'] ?>" readonly>
     <div class="form-group">
             <label for="category">Category</label>
           <input type="text" class="form-control bg-white" name="category" value="<?php echo $row['category']; ?>" readonly>
           </div>
         <div class="form-group">
             <label for="resolution">Resolution</label>
-          <textarea class="form-control bg-white" rows="10" cols="5" id="editor" name="resel" ></textarea>
-          </div>
+          <textarea style="height: 200px;"  id="editor" rows="50" cols="50" name="resel" >
+          </textarea>
           
   <div class="form-group">
     <select class="form-control" name="stage">
@@ -130,8 +109,7 @@ if ($row['attachment']) {
 }
    }
        
-   }
-   }  ?>
+     ?>
  </div>
 
 <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
@@ -144,6 +122,13 @@ if ($row['attachment']) {
  
     });
   });
+CKEDITOR.replace( 'editor',{
+        height:300,
+        filebrowserUploadUrl: './edit-tkt.php',
+        filebrowserUploadMethod:'form'
+
+});
 </script>
+
 </body>
 </html>

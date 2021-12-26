@@ -116,7 +116,7 @@ if(isset($_GET['PGN'])){
 $class= strtolower($_SESSION['class']);
           $id=$_GET['PGN'];
             $day=strtotime($_GET['date']);
-          $strenght=$re->num_rows;
+          $strenght=$re->num_rows;re
           $per_page=10;
           $nos_page=$strenght/10;
           $start=($id-1)*10;

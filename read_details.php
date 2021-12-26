@@ -10,6 +10,7 @@
 <?php
 error_reporting(0);
 session_start();
+print_r($_SESSION);
 if (isset($_GET["id"])) {
 	if ($_SESSION["type"]==1) {
 		# code...
@@ -57,8 +58,9 @@ echo "<td class='text-info'><b>".$stage."</td>";
 </tr>
 <?php                }
 
-	}elseif (isset($_SESSION['admin'])){
+	}elseif (isset($_SESSION['admin'])||isset($_SESSION['Teacher'])){
 			$tktid=$_GET["id"];
+			echo'about to go';
      $con=mysqli_connect("localhost","root","","users");	
        
         $query=mysqli_query($con,"SELECT * FROM `complaints`  WHERE  `tkt_id`='$tktid' ");
@@ -106,7 +108,7 @@ $query1=mysqli_query($con,"SELECT * FROM `users`  WHERE  `id`='$uid' ");
 <td><p> <?php echo date("D d-M-yy H:i:s",strtotime($row["c_date"]));  ?> </p> </td>
 </tr>
 <th>Remarks</th>
-<td><p> <?php echo $row["resolution"];  ?></p> </td>
+<td><p> <?php echo html_entity_decode( $row["resolution"]);  ?></p> </td>
 </tr>
 <?php                }
 }
