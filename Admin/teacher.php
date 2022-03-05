@@ -25,13 +25,11 @@ $var=explode('/', $_SESSION['class']);
 <body>
 	<div class="container">
 <div class="row">
-	<div class="col-lg-8 p-5   mt-5">
-		<div class="card">
-			<div class="card-head">
-				<img src="./im/demo.jpg" class="col-lg-8">
-			</div>
+	<div class="col-lg-12">
+		<div class="d-flex justify-content-between">
+			<div class="display-5">Hello, <?php  echo $_SESSION['Teacher'];	 ?></div>
+			<div class="display-5"><?php  echo date('d-M-y');	 ?></div>
 		</div>
-	</div>
 </div>
 </div>
 </body>

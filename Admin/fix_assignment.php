@@ -183,38 +183,31 @@ include 'db/dbutil.php';
 		</div>
 		<?php
 		if (isset($_POST['submit'])) {
-	
 		$folder='uploadassignment/';
-		  	$group=mysqli_escape_string($_POST['combination']);
-		  	$year=mysqli_escape_string($_POST['year']);
-		  	$subject=mysqli_escape_string($_POST['subject']);
-		  	$dos=mysqli_escape_string($_POST['dos']);
-		  	$fname=mysqli_escape_string($_FILES['file']['name']);
-		  	$ftemp=mysqli_escape_string($_FILES['file']['tmp_name']);
-		  	$assignment_title=mysqli_escape_string($_POST['assignment_title']);
-		  	$desc=mysqli_escape_string($_POST['desc']);
-	
-		  	$db=new dbutil();	
-	
-$query='INSERT INTO `assignment`( `combination`,`year`,`subject`,`assignment_title`,`description`,`date_of_submission`,`file_name`)VALUES("'.$group.'","'.$year.'","'.$subject.'","'.$assignment_title.'","'.$desc.'","'.$dos.'","'.$fname.'")' ;
-				$res=$db->queryRequest($query);
-				if ($res) {
-					$up=move_uploaded_file($ftemp,$folder.$fname);
-					if ($up) {
-						echo "<script>window.location.href='fix_assignment.php?status=success'</script>";
-					}else{
-						echo "<script>window.location.href='fix_assignment.php?status=upnotsuccess'</script>";
-					}
-					
-				}else{
-						echo "<script>window.location.href='fix_assignment.php?status=querynot'</script>";
-		  		
-						
-				}
-			
+		$group=mysqli_escape_string($_POST['combination']);
+		$year=mysqli_escape_string($_POST['year']);
+		$subject=mysqli_escape_string($_POST['subject']);
+		$dos=mysqli_escape_string($_POST['dos']);
+		$fname=mysqli_escape_string($_FILES['file']['name']);
+		$ftemp=mysqli_escape_string($_FILES['file']['tmp_name']);
+		$assignment_title=mysqli_escape_string($_POST['assignment_title']);
+		$desc=mysqli_escape_string($_POST['desc']);
+		$db=new dbutil();	
+		$query='INSERT INTO `assignment`( `combination`,`year`,`subject`,`assignment_title`,`description`,`date_of_submission`,`file_name`)VALUES("'.$group.'","'.$year.'","'.$subject.'","'.$assignment_title.'","'.$desc.'","'.$dos.'","'.$fname.'")' ;
+		$res=$db->queryRequest($query);
+		if ($res) {
+		$up=move_uploaded_file($ftemp,$folder.$fname);
+		if ($up) {
+			echo "<script>window.location.href='fix_assignment.php?status=success'</script>";
+		}else{
+			echo "<script>window.location.href='fix_assignment.php?status=upnotsuccess'</script>";
+			}
+		}else{
+			echo "<script>window.location.href='fix_assignment.php?status=querynot'</script>";				
+		}
+	}
 
-		  	}
-		    ?>
+?>
 	</div>
 </body>
 <script type="text/javascript" src="js/jquery.js"></script>

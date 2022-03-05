@@ -20,10 +20,9 @@ session_start();
     }
     }
   }
-$teacher=strtolower($_SESSION['Teacher']);
+$teacher=$_SESSION['Teacher'];
   $cls=new GetUser();
   $rus=$cls->details($teacher);
-
 
    ?>
             <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,19 +49,15 @@ $teacher=strtolower($_SESSION['Teacher']);
       <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
   </div>                                            
-    <input type="text" class="form-control" name="username" value="<?php echo $array['user']; ?>" readonly="name" >
+    <input type="text" class="form-control" name="username" value="<?php echo $rus['name']; ?>" readonly="name" >
   </div>
     <div class="form-group input-group">
       <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1"><i class="fa fa-user-circle"></i></span>
   </div>
-    <input class="form-control" type="text" name="username" value="<?php echo $_SESSION['user']; ?>"  >
+    <input class="form-control" type="text" name="username" value="<?php echo $_SESSION['Teacher']; ?>"  >
   </div>
-     <div class="form-group input-group">
-      <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
-  </div>
-   <input type="text" class="form-control" name="username" value="<?php echo $_SESSION['mail']; ?>"  >
+
          <div class="form-group input-group">
       <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1"><i class="fa fa-key"></i></span>
@@ -99,7 +94,7 @@ $teacher=strtolower($_SESSION['Teacher']);
     
  if (!empty($_POST)) {
 if(isset($_POST['submit'])){
- $name=$_SESSION['name'];
+ $name=$_SESSION['Teacher'];
  $newpassword=md5($_POST['newpassword']);
  $cnfpassword=md5($_POST['cnfpassword']);
  $curpassword=md5($_POST['curpassword']);
@@ -109,7 +104,7 @@ if(isset($_POST['submit'])){
 while($row = $result->fetch_assoc())  {
         $pwd=$row['password'];
         if ($pwd==$curpassword) {
-          $update="UPDATE `admin` SET `password`='$newpassword' WHERE `name`='$name'";
+          $update="UPDATE `admin` SET `password`='$newpassword' WHERE `username`='$name'";
           $res=$db->queryRequest($update);
           if ($res) {
                 echo '<script>

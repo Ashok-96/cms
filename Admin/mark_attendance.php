@@ -3,20 +3,21 @@
 include 'db/dbutil.php';
 class Attendance extends dbutil 
 {
-function cstatus($start,$per_page)
-  {
-    $i=$start+1;
-    $sum=$start+$per_page;
-    while ($i<=$sum) {
-      if (isset($_POST['status'.$i.''])) {
-      $st=$_POST['status'.$i.''];
-      $arr[$i]=$st;
-      }else{
-        $arr[$i]='Absent';
-      }
-      $i++;
-    }
-   return $arr;
+  function AddData(){
+   $date=date('d-M-Y');
+   $class=$_SESSION['class'];
+   $sql='SHOW COLUMNS FROM `'.$class.'` LIKE "%'.$date.'"';
+    $res=parent::queryRequest($sql);
+    $count=$res->num_rows;
+  if ($count===0){
+    $sql='ALTER TABLE `'.$class.'` ADD COLUMN `'.$date.'` VARCHAR(10) DEFAULT "Absent" NOT NULL';
+   $re=parent::queryRequest($sql);
+if ($re) {
+    echo 'Everything is set to mark';
+  }else{
+    exit(0);
+  }
+  }
   }
 function query($sql){
     return parent::queryRequest($sql);
@@ -28,49 +29,41 @@ function checkDate($date){
   return $diff;
 
 }
-function listUsers($sql,$date,$day){
-      $re=parent::queryRequest($sql);           
+function listUsers($sql,$date){
+      $re=parent::queryRequest($sql);
+      
           while ($row=$re->fetch_assoc()) {
             echo "<tr>";
-          echo "<td>".$row["id"]."</td>";
-          echo "<td>".$row["name"]."</td>";
+          echo "<td class=col-4>".$row["name"]."</td>";
           if (isset($row[$date])) {
             if ($row[$date]=='Present') {
-                        echo '<td>   <label class="switch">
-        <input type="checkbox" class="custon-control-input" name="status'.$row["id"].'"  id="customSwitch1" value="Present" checked>
+                        echo '<td class=col-4 >   <label class="switch">
+        <input type="checkbox" class="custon-control-input" name="status'.$row["id"].'" onclick="demo('.$row["id"].')" id="status'.$row["id"].'" value="Present" checked>
         <span class="slider round"></span>
         </label>
-        <b class="text-success">Present</b> </td>';
+       <b class="text-success" id="remark'.$row["id"].'">Present</b>  </td>';
          }else{
-              echo '<td>   <label class="switch">
-        <input type="checkbox" class="custon-control-input" name="status'.$row["id"].'"  id="customSwitch1" value="Present">
+              echo '<td class=col-4>   <label class="switch">
+        <input type="checkbox" class="custon-control-input" name="status'.$row["id"].'"  onclick="demo('.$row["id"].')" id="status'.$row["id"].'" value="Present">
         <span class="slider round"></span>
-        </label>         <b class="text-danger">Absent</b>  </td>';
+        </label>       <b class="text-danger" id="remark'.$row["id"].'">Absent</b>  </td>';
             }
-          }else{
-                          echo '<td>   <label class="switch">
-        <input type="checkbox" class="custon-control-input" name="status'.$row["id"].'"  id="customSwitch1" value="Present">
+          }
+          else{
+            ?>
+        <td class=col-4>   <label class="switch" id="switch">
+        <input type="checkbox" class="custon-control-input" name="status<?php echo $row["id"] ?>" id="status<?php echo $row["id"] ?>"  onclick="demo(<?php echo $row["id"] ?>)" value="Present">
         <span class="slider round"></span>
-        </label>         <b class="text-danger">Absent</b>  </td>';
+        </label>         
+        <b class="text-danger" id="remark<?php echo $row["id"] ?>">Absent</b>  </td>
+         <?php }
           }
-          }
-          echo'
+          ?> 
+          
         </tr>  
       </tbody>
-    <tr>';
-  $day=strtotime($_GET['date']);
-  $c=date('l',$day);
-  $val=new Attendance();
-    if ($c=='Sunday'||strtotime($_GET['date'])>strtotime('now')) {
-        $date=$_GET['date'];
-  }else{
-  $value=$this->checkDate($date);
-  if ($value==0) {
-    # code...
-    echo '<td colspan="3">
-        <input class="btn btn-success shadow rounded-pill" type="submit" name="submit" value="Mark page '.$_GET['PGN'].' attendance"></td>';
-      }
-  }
+    <tr>
+  <?php 
   
 
   }

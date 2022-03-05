@@ -1,7 +1,9 @@
 <?php
 session_start(); 
 if(isset($_SESSION['admin']))
-  {?>
+
+  {  require 'db/dbutil.php';
+$db=new dbutil();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,9 +31,8 @@ if(isset($_SESSION['admin']))
   }
   </style>
      <?php 
-require 'db/dbutil.php';
-$db=new dbutil();
-$qu1="SELECT DISTINCT `combination` FROM `admin` ";
+
+$qu1="SELECT DISTINCT `subjects` FROM `admin` ";
 $cls=$db->queryRequest($qu1);
 $qu2="SELECT `name` FROM `users` WHERE `type`=1 ";
 $urs=$db->queryRequest($qu2);
@@ -208,6 +209,8 @@ $fds=$db->queryRequest($qu5);
 
 
 </html>
-<?php }else{
+<?php 
+echo date('d-m-y');
+}else{
   header("Location:index.php");
 } ?>

@@ -102,7 +102,7 @@ nav{
      <div class="collapse d-lg-block " id="atd">
     <div class="d-flex flex-wrap">
      
-      <a class=" nav-link active" href="attendance.php?date=<?php echo date('d-M-Y'); ?>"><span class="fa fa-check-square-o"></span> Mark Attendance</a>
+      <a class=" nav-link active" href="attendance.php"><span class="fa fa-check-square-o"></span> Mark Attendance</a>
     </div> 
      </div>
 <?php  } ?>
@@ -138,8 +138,12 @@ nav{
           <a href="#" class="nav-link active" data-toggle="modal" data-target="#teacher"><i class="fa fa-user-plus"></i> Add Teacher </a>        
       </li>
             <li class=" nav-item">
+<?php
+$db=new dbutil;
 
-    <a class="nav-link active " href="manage_users.php"><span class="fa fa-users"></span> Manage users <sup><span class="badge badge-danger p-1  ">0</span></sup>
+$sql="SELECT * FROM `users` WHERE `b_flag`=3 ";
+$res=$db->queryRequest($sql);  ?>
+    <a class="nav-link active " href="manage_users.php"><span class="fa fa-users"></span> Manage users <sup><span class="badge badge-danger p-1  "><?php echo "".$res->num_rows."" ?></span></sup>
      <i class="float-right fa fa-chevron-right ">  </i></a>
 
   </li>
