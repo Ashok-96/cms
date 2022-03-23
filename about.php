@@ -70,7 +70,7 @@ if (strlen($_SESSION["type"]) == 0) {
 </p></b>
 </div>  
 		 
-	<footer id="footer" class="py-3 bg-dark text-center" style="left: 0; bottom: 0; right: 0;  ">
+	<footer id="footer" class="py-3 bg-dark text-center fixed-bottom" style="left: 0; bottom: 0; right: 0;  ">
       <small class="text-white ">Copyright &copy; CLASS MANAGEMENT SYSTEM 2019-2020</small>
   </footer>
 </div>

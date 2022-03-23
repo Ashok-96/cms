@@ -20,7 +20,7 @@ $sql = "SELECT * FROM `users` WHERE username='".$username."'";
 
 		$s="INSERT INTO `userlog`(`userid`,`name`,`type`)VALUES('".$_SESSION["userID"]."','".$_SESSION["user"]."','".$_SESSION["type"]."')";
 		if ($db->queryRequest($s)) {
-		  header("Location:home.php?status=success&id=".$row['id'].	"");
+		  header("Location:home.php");
 					}	
     			else{
 			  header("Location:home.php?status=sorry");

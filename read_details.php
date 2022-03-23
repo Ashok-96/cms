@@ -2,7 +2,9 @@
 <div class="container">
 	<link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap4.min.css"/>
 <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap4.css"/>
-
+<link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
+ 
+<script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
 <table class=" table col-lg-9 table-bordered">
 	
 
@@ -10,7 +12,6 @@
 <?php
 error_reporting(0);
 session_start();
-print_r($_SESSION);
 if (isset($_GET["id"])) {
 	if ($_SESSION["type"]==1) {
 		# code...
@@ -54,7 +55,7 @@ echo "<td class='text-info'><b>".$stage."</td>";
 </tr>
 <tr>
 <th>Remarks</th>
-<td><p> <?php echo $row["resolution"];  ?></p> </td>
+<td><p> <?php echo html_entity_decode( $row["resolution"]);  ?></p> </td>
 </tr>
 <?php                }
 

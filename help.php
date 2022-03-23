@@ -36,12 +36,7 @@ font-family: 'Baumans', cursive;
    }
 </style>
 <body>
-	<div  id="loader" >
-<div style="left: 40%; top: 25%; position: absolute; display: none;" >
-      <i style="position: absolute; left: 47px; top: 102px;" class="fa fa-4x fa-cog fa-spin "></i>
-      <i style="position: absolute; left: 25.4px; top: 148px;" class="fa fa-3x fa-cog fa-spin spin-reverse"></i><br>
-      <i style="position: absolute;  left: 80px; top: 148.7px;" class="fa fa-3x fa-cog fa-spin spin-reverse"></i>
- </div>
+
  <div>
 
   <span  style="  position: absolute;

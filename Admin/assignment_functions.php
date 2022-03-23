@@ -14,18 +14,18 @@ function unsubmitters($usub){
    $res=parent::queryRequest($usub);
    if ($res) {
    if ($res->num_rows==0) {
-     echo "soory";
+     echo "sorry";
    }else{
 
     while ($row=$res->fetch_assoc()) {
-    	echo "<tr>";
-    	echo "<td>";
+    	echo "<tr class=border-dark>";
+    	echo "<td  class=border-dark>";
     	echo $row['assignment_title'];
     	echo "</td>";
-    	echo "<td>";
+    	echo "<td class=border-dark>";
     	echo $row['name'];
     	echo "</td>";
-    	echo "<td>";
+    	echo "<td class=border-dark>";
     	echo $row['reg_no'];
     	echo "</td>";
 

@@ -50,11 +50,12 @@ include 'db/dbutil.php';
 						echo "<td>".$row['name']."</td>";
 						echo "<td>".$row['year']."</td>";
 						echo "<td>".$row['combination']."</td>";
-						echo "<td>".$row['b_flag']."</td>";
 						if ($row['b_flag']==3) {
-							
+						echo "<td> <a class='text-danger text-bold'>locked</a></td>";
 						echo "<td><a class='btn btn-success' href='manage_users.php?op=unblock&id=".$row['id']."'><i class='fa fa-unlock'></i> unblock</a></td>";
 						}else{
+							echo "<td>------------</td>";
+							
 							echo "<td>------------</td>";
 						}
 
