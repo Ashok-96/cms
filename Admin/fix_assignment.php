@@ -136,8 +136,6 @@ include 'db/dbutil.php';
 						<div class="form-group" >
 							<label for="fyear">Year</label>
 						<input type="text" class="form-control bg-white" value="<?php echo $var[1]; ?>" name="year" readonly>
-
-				
 						</div>
 						<div class="form-group" id="jqdata">
 								<label for="fyear">subject</label>

@@ -1,7 +1,5 @@
 
 <?php 
-session_start();
-ob_start();
 if (isset($_SESSION)) {
 ?>
 <!DOCTYPE html>
@@ -9,42 +7,15 @@ if (isset($_SESSION)) {
 <head>
 
 	        <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="text/javascript" src="js/jquery.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="script-src 'self' https://apis.google.com">
 <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="bootstrap-4.5.0/css/bootstrap.css">
-<script type="text/javascript" src="bootstrap-4.5.0/js/bootstrap.js"></script>
-<script type="text/javascript" src="bootstrap-4.5.0/js/bootstrap.bundle.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 </head>
 <style >
-	#category,#scategory,#details{
-		background: transparent;
-	}
-	  .fa-spin.spin-reverse{
-    -webkit-animation-direction:reverse;
-    -moz-animation-direction:reverse;
-    animation-direction: reverse;
-   } 
-   .form-control,.form-group,h3{
-font-family: 'Baumans', cursive;
-
-   }
-</style>
-<body>
-
- <div>
-
-  <span  style="  position: absolute;
-  left: 40%;
-  top: 55%;"><b></b></span>
- </div>
-</div>
-	<?php include'topbar.php';  ?>
+	</style>
 <div class="container ">
 	<?php if (isset($_GET['status'])) {
 	 ?>
@@ -86,10 +57,26 @@ font-family: 'Baumans', cursive;
 	
 			</div>
 </form>
+<button onclick="myFunction('!hi')">clck</button>
+<div id="snackbar">Some text some message..</div>
 </div>
+<script >
+	
+  function myFunction(str) {
+  // Get the snackbar DIV
+  var x = document.getElementById("snackbar");
+  // Add the "show" class to DIV
+  x.className = "show";
+  x.innerHTML=str;
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function(){ x.className = x.className.replace("show", ""); 
+window.location.href='./tickets.php';}, 1800);
+}
+$(document).ready(function() {
+	
+})
+</script>
 <?php
-echo date('dmyyhms');
-require './db/dbutil.php';
 $db = new DButil();
 $nos=date('dmyyhms');
 $con= mysqli_connect("localhost","root","","users");
@@ -106,30 +93,26 @@ if (!empty($_POST["category"])) {
 $query="INSERT INTO `complaints`( `tkt_id`,`userid` ,`category`, `sub_category`,`details`) VALUES ('".$ids."','".$uid."','".$category."','".$scat."','".$details."')";
 $res=$db->queryRequest($query);
 	if ($res) {
-header('Location:./help.php?status=successful&&ref="'.$ids.'"');
 		?>
-<?php }else {
-header('Location:./help.php?status=sorry');
-	echo '<div class="alert alert-success alert-dismissible fade show mt-0" role="alert">
-	Help Esculation is not successful 
-  <strong><?php echo $ids; ?></strong> "'.$ids.'"is Ticket id for further reference..!
-  <a href="help.php"  data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </a>
-</div';
-}
-}else{
-		echo '<div class="alert alert-warning alert-dismissible fade show mt-0" role="alert">
-	post is empty 
-  <strong><?php echo $ids; ?></strong> is Ticket id for further reference..!
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div';
+		
+		<script >
+			var result="<?php echo $ids;?> Ticket had been raised";
+			myFunction(result)
+	</script>
+
+
+<?php		
+ }else {
+ 	?>
+		<script >myFunction('!hi done')</script>
+	
+<?php
 }
 }
 }
+
 ob_flush();
+}
 ?>
 </div>
 </div>

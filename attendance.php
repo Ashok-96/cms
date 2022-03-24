@@ -38,7 +38,7 @@ if (strlen($_SESSION["type"]) == 0) {
   $res=$db->queryRequest($sql);
   while ($r=$res->fetch_assoc()) {
           $subjects=explode('/', $r['Tables_in_users']);
-          echo "<option value=".$r['Tables_in_users']." >".$subjects[2]."</option>";
+          echo "<option value=".$r['Tables_in_users']." >".str_replace('_', ' ', $subjects[2])."</option>";
           echo "<div class='dropdown-divider'></div>";
     }
               ?>
@@ -63,9 +63,8 @@ if (strlen($_SESSION["type"]) == 0) {
 
 
 <script >
-  $(document).ready( function () {
-   
-} );
+  
+
 
 </script>
   </body>
