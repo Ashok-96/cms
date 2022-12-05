@@ -16,16 +16,7 @@ const DATABASE = "users";
 		}
 		return $result;
 	}
-	function multiQuery($sql){
- 			$conn = new mysqli(HOST,USERNAME,PASSWORD,DATABASE);
-		if($conn->connect_error){
-			die('Connection Failed :'.$conn->connect_error);
-		}else{
-		$result = $conn->multi_query($sql);
-		$conn->close();
-		}
-		return $result;
+	
  }
-}
  
 ?>

@@ -24,7 +24,7 @@ if ($sql) {
 session_unset();
 session_destroy();		
         ob_clean();
-        header("location:demo.php");
+        header("location:./index.php");
         }
 
 
