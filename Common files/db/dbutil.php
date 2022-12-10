@@ -6,6 +6,7 @@ const HOST = "localhost";
 const DATABASE = "users";
 
  class DButil {
+	
  	function queryRequest($sql){
 		$conn = new mysqli(HOST,USERNAME,PASSWORD,DATABASE);
 		if($conn->connect_error){
@@ -18,5 +19,5 @@ const DATABASE = "users";
 	}
 	
  }
- 
+
 ?>

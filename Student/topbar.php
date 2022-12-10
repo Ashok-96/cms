@@ -9,23 +9,23 @@
        
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-        <a class="nav-link <?php if($pageName=='home.php'){echo 'active';} ?>"   href="home.php"  >Home</a>
+        <a class="nav-link <?php if($pageName=='home'){echo 'active';} ?>"   href="../home"  >Home</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link <?php if($pageName=='assignment.php'){echo 'active';} ?>" href="assignment.php"   >Assignment</a>
+          <a class="nav-link <?php if($pageName=='assignment'){echo 'active';} ?>" href="../assignment/"   >Assignment</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link <?php if($pageName=='attendance.php'){echo 'active';} ?>" href="attendance.php" >Attendance</a>
+          <a class="nav-link <?php if($pageName=='attendance'){echo 'active';} ?>" href="../attendance" >Attendance</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php if($pageName=='tickets.php'){echo 'active';} ?>" href="tickets.php" >Tickets</a>
+            <a class="nav-link <?php if($pageName=='tickets'){echo 'active';} ?>" href="../tickets" >Tickets</a>
           </li>
             
           <li class="nav-item ">
-        <a class="nav-link <?php if($pageName=='edit-user.php'){echo 'text-white';}else{ echo 'text-secondary';} ?> nav-link" href="edit-user.php" >Edit Profile</a> 
+        <a class="nav-link <?php if($pageName=='Edit'){echo 'text-white';}else{ echo 'text-secondary';} ?> nav-link" href="../Edit" >Edit Profile</a> 
         </li>  
            <li class="nav-item ">
-          <a href="./logout.php"class=" nav-link " >Logout</a>
+          <a href="../logout/"class=" nav-link " >Logout</a>
         </li>
       </div>
     </li>
