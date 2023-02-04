@@ -36,21 +36,37 @@ margin-top: 50%;
 <?php include'../topbar.php';?> 
 
 </head> 
-<body >
-<div class="container-fluid">
+<body class="bg-dark text-white" >
+<div class="container ">
   <h3>Hello, <?php echo $_SESSION['user']; ?></h3>
 </div>
+<div class="container">
+<div class="row">
+<div class="card shadow bg-secondary p-5 col-3 m-2" >
 
-  <div class="container shadow ">
-    <h3>Updates</h3>
-    <div class="row">
-    <div class="card m-3" style="width: 18rem;">
-  <div class="card-body">
-    
-  </div>
 </div>
-    </div>
-  </div>
+<div class="card shadow bg-secondary p-5 col-3 m-2" >
+
+</div>
+
+<div class="card shadow bg-secondary p-5 col-3 m-2" >
+
+</div>
+</div>
+<div class="row">
+<div class="card shadow bg-secondary p-5 col-3 m-2" >
+
+</div>
+<div class="card shadow bg-secondary p-5 col-3 m-2" >
+
+</div>
+
+<div class="card shadow bg-secondary p-5 col-3 m-2" >
+
+</div>
+</div>
+</div>
+
 
 </body>
 

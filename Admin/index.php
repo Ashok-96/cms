@@ -6,7 +6,7 @@ session_start();
 ob_start();
 if (isset($_SESSION["admin"])||isset($_SESSION['Teacher'])) {
 	echo "working";
-	header("Location:ahome.php");
+	header("Location:./home/");
   } 
   else{
   
@@ -14,33 +14,26 @@ if (isset($_SESSION["admin"])||isset($_SESSION['Teacher'])) {
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=Baumans&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap4.min.css"/>
-<link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap4.css"/>
-<link rel="stylesheet" type="text/css" href="css/blogin.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 	<title>Admin pannel</title>
 </head>
 <body>
-<div class="container-fluid">
-  <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image pl-2"></div>
-    <div class="col-md-8 col-lg-6">
-      <div class="login d-flex align-items-center py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-4">Welcome back!</h3>
+<div class="container">
+  
+        <div class="row">
+          <div class="container">
+            <div class="my-5">
+              <h3 class="mb-4">Welcome back!</h3>
               <form method="post" action="<?php echo htmlspecialchars('user_authentication.php',ENT_QUOTES) ?>">
-                <div class="form-label-group">
+                <div class="form-group m-2">
+                <label for="username">username/email</label>
                   <input type="text" id="username" name="username" class="form-control" placeholder="username/email" required autofocus>
-                  <label for="username">username/email</label>
                 </div>
 
-                <div class="form-label-group">
+                <div class="form-group m-2">
+                <label for="password">Password</label>
                   <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-                  <label for="password">Password</label>
                 </div>
        
 				<div  class="form-label-group" id="jqdata">
@@ -53,11 +46,6 @@ if (isset($_SESSION["admin"])||isset($_SESSION['Teacher'])) {
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 </div>
 </body>
 <script type="text/javascript" src="js/jquery.js"></script>
