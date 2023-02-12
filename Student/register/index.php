@@ -1,15 +1,17 @@
   <?php 
-  use LDAP\Result;
 require_once('../Common files/db/dbutil.php');
 session_start(); 
 ob_start();
   $db = new DButil();
 
-  $sql = 'select *  from `configurations` WHERE `Entities`="Registration"';
+  $sql = 'select `Status`  from `configurations` WHERE `Entities`="Registration"';
   $result = $db->queryRequest($sql);
   while($row=$result->fetch_assoc()){
-    echo $row['Registration'];
+    $status=$row['Status'];
   }
+
+    if($status==1){
+    
 $db = new DButil();
 $sql = "SELECT * FROM admin";
 $result = $db->queryRequest($sql);
@@ -38,7 +40,7 @@ $result = $db->queryRequest($sql);
       </div>
 
       <div class="form-group p-2">
-        <b><label  class="text-dark"for="phone">Phonenumber</label></b>
+        <b><label  class="text-dark"for="phone">Phone</label></b>
         <input class="form-control" type="number" name="phone"required />
       </div>
       <div class="d-flex justify-content-start">
@@ -72,6 +74,10 @@ $result = $db->queryRequest($sql);
 </body>
 </html>
 <?php
+  }else{
+    echo"<h1>Not yet enabled! please contact administrator</h1>";
+  }
+
 $input = [];
 if (isset($_POST["submit"])) {
   foreach($_POST as $key=>$val){
@@ -82,6 +88,14 @@ if (isset($_POST["submit"])) {
       $input[$key] = $value;
     }
   }
+  $first_name=$input['fname'];
+  $last_name=$input['lname'];
+  $gender=$input['gender'];
+  $phone=$input['phone'];
+  $combination=$input['combination'];
+  $username=$input['username'];
+  $password=$input['password'];
+
  $sql='INSERT INTO `users` (`Firstname`,`Lastname`,`Gender`,`combination`, `username`, `phonenumber`, `password`) VALUES("'.$input['fname'].'","'.$input['lname'].'","'.$input['gender'].'","'.$input['Combination'].'","'.$input['username'].'","'.$input['phone'].'","'.$input['password'].'")';
 $result=$db->queryRequest($sql);
 if($result){
@@ -93,4 +107,8 @@ if($result){
 
 }
   }
+  
+?>
+<?php
+    
 ?>

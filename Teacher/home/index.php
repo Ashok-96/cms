@@ -33,12 +33,11 @@ margin-top: 50%;
   color: white;
   background-color: rgba(0, 0, 150, 0);
 }
-.alert-primary
-{
- background: url('./Assets/Background_image  /fading-blue-background_53876-88684.avif' );
+.alert-primary{
+  background: url('./fading-blue-background_53876-88684.avif' ); 
   background-repeat: no-repeat;
   background-size: 100%;
-  color: white;
+  color: whitesmoke;
 }
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,22 +51,8 @@ margin-top: 50%;
 </head> 
 <body class="alert-primary" >
 <div class="container-fluid">
-<div class="header ">
-<?php
-    $time=date('H');
-    if ($time<12){
-      echo "<h3>Good Morning!, ".$_SESSION['user']."</h3>";
-    }else if($time>12 && $time<16){
-      echo "<h3>Good Afternoon!, ".$_SESSION['user']."</h3>";
-
-    }
-    else if($time>=16){
-      echo "<h3>Good Evening!, ".$_SESSION['user']."</h3>";
-
-    }
-    ?>
-    
-</div>
+  <h3>Hello, <?php 
+  echo $_SESSION['user']; ?></h3>
 </div>
 <div class="container mx-auto my-5">
 <div class="row">
