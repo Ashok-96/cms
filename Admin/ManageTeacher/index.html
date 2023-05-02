@@ -1,0 +1,158 @@
+        <!DOCTYPE html>
+        <html lang="en" style="font-family: ABeeZee, sans-serif;">
+
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+            <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1063/1063385.png?w=360" class="rel">
+            <title>Teachers</title>
+            <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
+            <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+            <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+            <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+            <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+            <link rel="stylesheet" href="assets/css/aos.min.css">
+            <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+        </head>
+
+        <body id="page-top" style="font-family: ABeeZee, sans-serif;">
+            <div id="wrapper">
+                <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-dark p-0" data-aos="fade-right" style="color: rgb(222,223,230);">
+                    <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                            <div class="sidebar-brand-icon rotate-n-15"></div>
+                            <div class="sidebar-brand-text mx-3"><span>cms</span></div>
+                        </a>
+                        <hr class="sidebar-divider my-0">
+                        <ul class="navbar-nav text-light" id="accordionSidebar">
+                                <li class="nav-item"><a class="nav-link " href="../home/"><i class="fa fa-dashboard" style="font-size: 18px;"></i><span>&nbsp;Dashboard</span></a></li>
+                            <li class="nav-item"><a class="nav-link " href="../ManageStudent/"><i class="fas fa-users"></i><span>&nbsp;Students</span></a></li>
+                            <li class="nav-item"><a class="nav-link active" href="../ManageTeacher/"><i class="far fas fa-chalkboard-teacher"></i><span>&nbsp;Teachers</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="../Depeartments/"><i class="fas fa-building"></i><span>&nbsp;Departments</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="../Combinations/"><i class="fas fa-terminal"></i><span>&nbsp;Combinations</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="../Classes/"><i class="fas fa-chalkboard"></i>&nbsp;Classes</span></a></li>
+                        </ul>
+                        <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+                    </div>
+                </nav>
+                <div class="d-flex flex-column" id="content-wrapper">
+                    <div data-aos="fade-down" id="content" style="border-radius: 8px;border-left-width: 3px;border-left-color: var(--bs-blue);background: var(--bs-navbar-active-color);">
+                        <nav class="navbar navbar-gradient-dark navbar-expand bg-dark text-white shadow mb-4 topbar static-top navbar-dark" >
+                            <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                                <h3 class="text-white mb-0">Hello, Admin</h3>
+                                <nav class="navbar navbar-light navbar-expand-md py-3">
+                                    <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                                        <div class="collapse navbar-collapse" id="navcol-2">
+                                            <ul class="navbar-nav ms-auto">
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </nav>
+                                <ul class="navbar-nav flex-nowrap ms-auto">
+                                    <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                            
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown no-arrow mx-1"></li>
+                                    <li class="nav-item dropdown no-arrow mx-1">
+                                        <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
+                                    </li>
+                                    <div class="d-none d-sm-block topbar-divider"></div>
+                                    <li class="nav-item dropdown no-arrow"></li>
+                                </ul><i class="icon ion-power" style="font-size: 19px;"></i><a href="../logout/". style="color: white;padding-left: 1.9px;"><strong>Logout</strong></a>
+                            </div>
+                        </nav>
+                        <div class="container-fluid" >
+                            <div class="alert alert-success alert-dismissible fade show" role="alert" id="success" style="display: none;">
+                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                                Task Completed
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert" id="error" style="display: none;">
+                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                Something went wrong!
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                                        <table class="table table-sm table-bordered" id="dataTable">
+                                            <thead class="bg-gradient-dark text-center text-white">
+                                                <tr>
+                                                    <th>Firstname</th>
+                                                    <th>Lastname</th>
+                                                    <th>Department</th>
+                                                    <th >Action</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody id="data">
+                                                
+                                            </tbody>
+                                        </table>
+                                            </div>
+                                        <div class="containser">
+                                        </div>  
+                                        
+                                        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                                            <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                            </symbol>
+                                            <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                            </symbol>
+                                            <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                            </symbol>
+                                        </svg>
+                                        
+        </body>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.min.js"></script>
+    <script src="assets/js/chart.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        let sPageURL = window.location.search.substring(1)
+
+        if(sPageURL.length>0){
+            let flag=sPageURL.split('=')[1]
+            if(flag=='success'){
+                $('#success').css({
+                    'display':'block'
+                })
+            $('.btn-close').click(()=>window.location.href='./')
+            }else if(flag=='error'){
+                $('#error').css({
+                    'display':'block'
+                })
+            $('.btn-close').click(()=>window.location.href='./')
+
+            }
+        }
+        $.ajax({
+            method:'POST',
+            url:'./Teacher.php',
+            data:{'Teachers':true},
+            success:function(e){
+                let result=JSON.parse(e)
+                $("#data").html()
+                for(let i=0;i<result.Firstname.length;i++){
+
+    $("#data").append(`<tr><td>${result.Firstname[i]}</td><td>${result.Lastname[i]}</td><td>${result.Department[i]}</td><td><a href="./Edit/index.html?id=${result.id[i]}" class="btn btn-outline-primary "><i class="fa fa-cog">&nbsp;</i></a>&nbsp;<a href="./Delete/index.php?id=${result.id[i]}" class="btn btn-outline-danger "><i class="fa fa-trash">&nbsp;</i></a></td></tr>
+            <!-- Button trigger modal -->
+    `)
+    }
+        $('#dataTable').DataTable();
+
+        }      
+        })
+        })
+
+    </script>
+    </html>

@@ -1,0 +1,231 @@
+    <!DOCTYPE html>
+    <html lang="en" style="font-family: ABeeZee, sans-serif;">
+
+    <head>
+        
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
+        <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+        <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+        <link rel="stylesheet" href="assets/css/aos.min.css">
+        <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
+    
+    </head>
+
+    <body id="page-top" style="font-family: ABeeZee, sans-serif;">
+        <div id="wrapper">
+            <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-dark p-0" data-aos="fade-right" style="color: rgb(222,223,230);">
+                <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                        <div class="sidebar-brand-icon rotate-n-15"></div>
+                        <div class="sidebar-brand-text mx-3"><span>cms</span></div>
+                    </a>
+                    <hr class="sidebar-divider my-0">
+                    <ul class="navbar-nav text-light" id="accordionSidebar">
+                        <li class="nav-item"><a class="nav-link active" href="../home/"><i class="fa fa-dashboard" style="font-size: 18px;"></i><span>&nbsp;Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link " href="../ManageStudent/"><i class="fas fa-users"></i><span>&nbsp;Students</span></a></li>
+                    <li class="nav-item"><a class="nav-link " href="../ManageTeacher/"><i class="far fas fa-chalkboard-teacher"></i><span>&nbsp;Teachers</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Depeartments/"><i class="fas fa-building"></i><span>&nbsp;Departments</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Combinations/"><i class="fas fa-terminal"></i><span>&nbsp;Combinations</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Classes/"><i class="fas fa-chalkboard"></i>&nbsp;Classes</span></a></li>
+                </ul>
+                    <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+                </div>
+            </nav>
+            <div class="d-flex flex-column" id="content-wrapper">
+                <div data-aos="fade-down" id="content" style="border-radius: 8px;border-left-width: 3px;border-left-color: var(--bs-blue);background: var(--bs-navbar-active-color);">
+                    <nav class="navbar navbar-gradient-dark navbar-expand bg-dark text-white shadow mb-4 topbar static-top navbar-dark" >
+                        <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                            <h3 class="text-white mb-0">Hello, Admin</h3>
+                            <nav class="navbar navbar-light navbar-expand-md py-3">
+                                <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                                    <div class="collapse navbar-collapse" id="navcol-2">
+                                        <ul class="navbar-nav ms-auto">
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                            <ul class="navbar-nav flex-nowrap ms-auto">
+                                <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                                        <form class="me-auto navbar-search w-100">
+                                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                                <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown no-arrow mx-1"></li>
+                                <li class="nav-item dropdown no-arrow mx-1">
+                                    <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
+                                </li>
+                                <div class="d-none d-sm-block topbar-divider"></div>
+                                <li class="nav-item dropdown no-arrow"></li>
+                            </ul><i class="icon ion-power" style="font-size: 19px;"></i><a href="../logout/". style="color: white;padding-left: 1.9px;"><strong>Logout</strong></a>
+                        </div>
+                    </nav>
+                    <div class="container-fluid">
+                        <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                            <h3 class="text-dark mb-0">Dashboard</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-xl-3 mb-4">
+                                <div class="card shadow border-start-primary py-2" style="border-radius: 8px;border-left-width: 3px;border-left-color: var(--bs-blue);">
+                                    <div class="card-body">
+                                        <div class="row align-items-center no-gutters">
+                                            <div class="col me-2">
+                                                <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>sTUDENTS</span></div>
+                                                <div class="text-dark fw-bold h5 mb-0" id="Students"><span>0</span></div>
+                                            </div>
+                                            <div class="col-auto"><i class="fas fa-user-friends fa-2x text-gray-300"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4">
+                                <div class="card shadow border-start-success py-2" style="border-radius: 8px;border-left-width: 3px;border-left-color: var(--bs-blue);">
+                                    <div class="card-body">
+                                        <div class="row align-items-center no-gutters">
+                                            <div class="col me-2">
+                                                <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>TEACHERS</span></div>
+                                                <div class="text-dark fw-bold h5 mb-0" id="Teachers"><span>0</span></div>
+                                            </div>
+                                            <div class="col-auto"><i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4">
+                                <div class="card shadow border-start-info py-2" style="border-radius: 8px;border-left-width: 3px;border-left-color: var(--bs-blue);">
+                                    <div class="card-body">
+                                        <div class="row align-items-center no-gutters">
+                                            <div class="col me-2">
+                                                <div class="text-uppercase text-info fw-bold text-xs mb-1"><span>TASKS</span></div>
+                                                <div class="row g-0 align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="text-dark fw-bold h5 mb-0 me-3" id="Assignments"><span>0</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-xl-3 mb-4">
+                                <div class="card shadow border-start-primary py-2" style="border-radius: 8px;border-left-width: 3px;border-left-color: var(--bs-blue);">
+                                    <div class="card-body">
+                                        <div class="row align-items-center no-gutters">
+                                            <div class="col me-2">
+                                                <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>DEPARTMENTS</span></div>
+                                                <div class="text-dark fw-bold h5 mb-0" id="Departments" ><span>$40,000</span></div>
+                                            </div>
+                                            <div class="col-auto"><i class="fas fa-school fa-2x text-gray-300"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4">
+                                <div class="card shadow border-start-success py-2" style="border-radius: 8px;border-left-width: 3px;border-left-color: var(--bs-blue);">
+                                    <div class="card-body">
+                                        <div class="row align-items-center no-gutters">
+                                            <div class="col me-2">
+                                                <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>COMBINATIONS</span></div>
+                                                <div class="text-dark fw-bold h5 mb-0" id="Combinations" ><span></span></div>
+                                            </div>
+                                            <div class="col-auto"><i class="fas fa-terminal fa-2x text-gray-300"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card shadow border-start-warning py-2" style="border-radius: 8px;border-left-width: 3px;border-left-color: var(--bs-blue);">
+                                    <div class="card-body" style="border-radius: 3px;border-left: 0px solid var(--bs-blue);">
+                                        <div class="row align-items-center no-gutters">
+                                            <div class="col me-2">
+                                                <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span>QUERIES</span></div>
+                                                <div class="text-dark fw-bold h5 mb-0"id="Queries"><span>18</span></div>
+                                            </div>
+                                            <div class="col-auto"><i class="fas fa-ticket-alt fa-2x text-gray-300"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4"></div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="chart-area">
+                                    <canvas data-bss-chart="{&quot;type&quot;:&quot;line&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;January&quot;,&quot;February&quot;,&quot;March&quot;,&quot;April&quot;,&quot;May&quot;,&quot;June&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Revenue&quot;,&quot;backgroundColor&quot;:&quot;#4e73df&quot;,&quot;borderColor&quot;:&quot;#4e73df&quot;,&quot;data&quot;:[&quot;4512&quot;,&quot;5312&quot;,&quot;6251&quot;,&quot;7841&quot;,&quot;9821&quot;,&quot;14984&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false,&quot;labels&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}},&quot;title&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;gridLines&quot;:{&quot;color&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;zeroLineColor&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;drawBorder&quot;:false,&quot;drawTicks&quot;:false,&quot;borderDash&quot;:[&quot;2&quot;],&quot;zeroLineBorderDash&quot;:[&quot;2&quot;],&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;fontColor&quot;:&quot;#858796&quot;,&quot;fontStyle&quot;:&quot;normal&quot;,&quot;padding&quot;:20}}],&quot;yAxes&quot;:[{&quot;gridLines&quot;:{&quot;color&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;zeroLineColor&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;drawBorder&quot;:false,&quot;drawTicks&quot;:false,&quot;borderDash&quot;:[&quot;2&quot;],&quot;zeroLineBorderDash&quot;:[&quot;2&quot;]},&quot;ticks&quot;:{&quot;fontColor&quot;:&quot;#858796&quot;,&quot;fontStyle&quot;:&quot;normal&quot;,&quot;padding&quot;:20}}]}}}"></canvas></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="chart-area"><canvas id="demo"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="bg-light-secondary sticky-footer">
+                    <div class="container my-auto">
+                        <div class="text-center my-auto copyright"><span>Copyright © CMS 2020</span></div>
+                    </div>
+                </footer>
+            </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        </div>
+        
+    </body>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.min.js"></script>
+    <script src="assets/js/chart.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script>
+$(document).ready(function(){
+            
+            $.ajax({
+                'method':'POST',
+                'url':'./home.php',
+                'data':{"isloggedin":true},
+                success:function(e){
+                    let result=JSON.parse(e)
+                    $("#Students").html(result.counts.result[0])
+                    $("#Combinations").html(result.counts.result[1])
+                    $("#Departments").html(result.counts.result[2])
+                    console.log(result)
+                    $("#Teachers").html(result.counts.result[result.counts.length-1])
+                   let ctx=$("#demo")[0].getContext('2d');
+            var myChart = new Chart(ctx, {  
+    type: "bar",  
+    data: {  
+        labels: result.counts.result.map(e=>e),  
+        datasets: [  
+        {  
+            label: "counts",  
+            data: result.counts.result.map(e=>e),  
+            backgroundColor: "rgba(153,205,1,0.6)",  
+        },  
+        
+        ],  
+    },  
+    }); 
+                    $('#demo').attr('data-bss-chart',`{"type":"line","data="}`)
+                    result.isloggedin==false?window.location.href='.../index.php':true
+                }
+
+            })
+        })
+    </script>
+    </html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" style="font-family: ABeeZee, sans-serif;">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>Edit</title>
+<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
+<link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
+<link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
+<link rel="stylesheet" href="../assets/fonts/fontawesome5-overrides.min.css">
+<link rel="stylesheet" href="../assets/css/aos.min.css">
+<link rel="stylesheet" href="../assets/css/Navbar-Right-Links-icons.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+
+<body id="page-top" style="font-family: ABeeZee, sans-serif;">
+<div id="wrapper">
+    <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-dark p-0" data-aos="fade-right" style="color: rgb(222,223,230);">
+<div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+<div class="sidebar-brand-icon rotate-n-15"></div>
+<div class="sidebar-brand-text mx-3"><span>cms</span></div>
+</a>
+<hr class="sidebar-divider my-0">
+<ul class="navbar-nav text-light" id="accordionSidebar">
+    <li class="nav-item"><a class="nav-link " href="../../home/"><i class="fa fa-dashboard" style="font-size: 18px;"></i><span>&nbsp;Dashboard</span></a></li>
+<li class="nav-item"><a class="nav-link " href="../../ManageStudent/"><i class="fas fa-users"></i><span>&nbsp;Students</span></a></li>
+<li class="nav-item"><a class="nav-link active" href="../../ManageTeacher/"><i class="far fas fa-chalkboard-teacher"></i><span>&nbsp;Teachers</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../../Depeartments/"><i class="fas fa-building"></i><span>&nbsp;Departments</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../../Combinations/"><i class="fas fa-terminal"></i><span>&nbsp;Combinations</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../../Classes/"><i class="fas fa-chalkboard"></i>&nbsp;Classes</span></a></li>
+</ul>
+<div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+</div>
+    </nav>
+<div class="d-flex flex-column" id="content-wrapper">
+<div data-aos="fade-down" id="content" style="border-radius: 8px;border-left-width: 3px;border-left-color: var(--bs-blue);background: var(--bs-navbar-active-color);">
+<nav class="navbar navbar-gradient-dark navbar-expand bg-dark text-white shadow mb-4 topbar static-top navbar-dark" >
+<div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+<h3 class="text-white mb-0">Hello, Admin</h3>
+<nav class="navbar navbar-light navbar-expand-md py-3">
+<div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navcol-2">
+<ul class="navbar-nav ms-auto">
+
+</ul>
+</div>
+</div>
+</nav>
+<ul class="navbar-nav flex-nowrap ms-auto">
+<li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+<div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
+<form class="me-auto navbar-search w-100">
+<div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+    <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+</div>
+</form>
+</div>
+</li>
+<li class="nav-item dropdown no-arrow mx-1"></li>
+<li class="nav-item dropdown no-arrow mx-1">
+<div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
+</li>
+<div class="d-none d-sm-block topbar-divider"></div>
+<li class="nav-item dropdown no-arrow"></li>
+</ul><i class="icon ion-power" style="font-size: 19px;"></i><a href="../logout/". style="color: white;padding-left: 1.9px;"><strong>Logout</strong></a>
+</div>
+</nav>
+
+
+
+    <div class="container-fluid">
+    <div class="row ">
+    <div class="col-lg-8">
+        
+    <div class="row">
+<div class="col">
+<div class="card shadow ">
+<div class="card-header ">
+    <p class="text-primary m-0 fw-bold">User Settings <i class="fas fa-cog"></i></p>
+</div>
+<div class="card-body">
+    <form method="post" action="./edit.php">
+        <div class="row">
+            <div class="col">
+                <div class="mb-3"><label class="form-label" for="Firstname"><strong>First Name</strong></label><input id="Firstname" class="form-control" type="text" placeholder="First Name" name="Firstname" /></div>
+            </div>
+            <div class="col">
+                <div class="mb-3"><label class="form-label" for="Lastname"><strong>Last Name</strong></label><input id="Lastname" class="form-control" type="text" placeholder="Last Name" name="Lastname" /></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="mb-3"><label class="form-label" for=""><strong>Departments</strong></label></div>
+                <select class="form-select" name="Departments"style="margin: 0px;margin-top: -16px;">
+                    <optgroup label="Combination" id="Combination_list">
+                    </optgroup>
+                </select>
+            </div>
+            <div class="col">
+                <div class="mb-3"></div>
+            </div>
+        </div>
+        <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit" name="submit" id="submit"  style="margin-top: 24px;">Save Settings</button></div>
+    </form>
+</div>
+</div>
+<div class="card shadow">
+
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </div>
+    <div class="card shadow mb-5"></div>
+    </div>
+    </div>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/aos.min.js"></script>
+    <script src="../assets/js/chart.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>         
+    </body>
+    <script>
+    $(document).ready(function(){
+    let sPageURL = window.location.search.substring(1)
+    console.log( sPageURL.split('=')[1])
+    $("#submit").attr('value',sPageURL.split('=')[1])
+    $.ajax({
+    method:'post',
+    url:'./edit.php',
+    data:{"id":sPageURL.split('=')[1],'display':true},
+    success:function(e){
+        let result=JSON.parse(e)
+        $("#Firstname").val(result.result.Firstname)
+        $("#Lastname").val(result.result.Lastname)
+        $('optgroup').attr('label',result.result.Department)
+        result.Department.map(e=>$('optgroup').append(`<option value='${e}'>${e}</option>`))
+    }
+    })
+
+    })
+
+    </script>
+
+    </html>
