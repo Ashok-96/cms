@@ -6,11 +6,11 @@ include '../../../Common files/db/dbutil.php';
 $data=[];
 $db = new DButil();
 if(isset($_POST['display'])){
-$sql="SELECT `Firstname`,`Lastname`, `Combination` FROM `registration` WHERE `id`='".$_POST['id']."';";
+$sql="SELECT`id`, `Firstname`,`Lastname`, `combination` FROM `registration` WHERE `id`='".$_POST['id']."';";
 $combination="SELECT DISTINCT(`combination`) from `combinations`";
 $res_2=$db->queryRequest($combination);
 while($row=$res_2->fetch_assoc()){
-  $data['combinations'][]=$row['combination'];
+  $data['combination'][]=$row['combination'];
 }
 $res=$db->queryRequest($sql);
 
@@ -21,7 +21,7 @@ echo json_encode($data);
 }
 if(isset($_POST['submit'])){
   print_r($_POST);
-  $sql = "UPDATE `registration` SET `Firstname`='" . $_POST['Firstname'] . "', `Lastname`='" . $_POST['Lastname'] . "', `Combination`='" . $_POST['Combination'] . "' WHERE `id`='".$_POST['submit']."'";
+  $sql = "UPDATE `teachers` SET `Firstname`='" . $_POST['Firstname'] . "', `Lastname`='" . $_POST['Lastname'] . "', `Department`='" . $_POST['Departments'] . "' WHERE `id`='".$_POST['submit']."'";
 
   $result = $db->queryRequest($sql);
 

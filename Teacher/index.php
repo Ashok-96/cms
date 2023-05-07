@@ -64,15 +64,14 @@ body{
 			$username = $_POST['username'];
 			$password = md5($_POST['password']);
 			$db = new dbutil();
-		$sql = "SELECT * FROM `teachers` WHERE username='".$username."' and password ='".$password."' AND `type`='Teacher'";
+		$sql = "SELECT * FROM `teachers` WHERE username='".$username."' and password ='".$password."' ";
 		$result=$db->queryRequest($sql);
 		try{
 					if ($result->num_rows > 0) {
 						while($row = $result->fetch_assoc()) {
 							if( ($row['username'] == $username) && $row['password'] == $password ){
 								$_SESSION["teacherID"] = $row['id'];
-								$_SESSION["teacher"] = $row['name'];
-								$_SESSION["type"] = $row['type'];
+								$_SESSION["teacher"] = $row['Firstname']." ".$row['Lastname'];
 										echo "<script>swal('welcome!','Authenticated Successfully','success')</script>";
 														header( "refresh:2; url=./home/" );
 							}

@@ -37,6 +37,7 @@
                     <li class="nav-item"><a class="nav-link" href="../Depeartments/"><i class="fas fa-building"></i><span>&nbsp;Departments</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="../Combinations/"><i class="fas fa-terminal"></i><span>&nbsp;Combinations</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="../Classes/"><i class="fas fa-chalkboard"></i>&nbsp;Classes</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Configuration/"><i class="fas fa-cog"></i>&nbsp;Configurations</span></a></li>
                 </ul>
                     <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
                 </div>
@@ -124,6 +125,9 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div id="count">
+
+                            </div>
                             <div class="col-md-6 col-xl-3 mb-4">
                                 <div class="card shadow border-start-primary py-2" style="border-radius: 8px;border-left-width: 3px;border-left-color: var(--bs-blue);">
                                     <div class="card-body">
@@ -186,6 +190,7 @@
             </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
         </div>
         
+        
     </body>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/aos.min.js"></script>
@@ -194,7 +199,7 @@
     <script src="assets/js/theme.js"></script>
     <script>
 $(document).ready(function(){
-            
+     
             $.ajax({
                 'method':'POST',
                 'url':'./home.php',
@@ -205,23 +210,22 @@ $(document).ready(function(){
                     $("#Combinations").html(result.counts.result[1])
                     $("#Departments").html(result.counts.result[2])
                     console.log(result)
-                    $("#Teachers").html(result.counts.result[result.counts.length-1])
+                    $("#Teachers").html(result.counts.result[3])
                    let ctx=$("#demo")[0].getContext('2d');
             var myChart = new Chart(ctx, {  
-    type: "bar",  
+    type: "line",  
     data: {  
         labels: result.counts.result.map(e=>e),  
         datasets: [  
         {  
             label: "counts",  
             data: result.counts.result.map(e=>e),  
-            backgroundColor: "rgba(153,205,1,0.6)",  
+            backgroundColor:[ "rgba(153,205,1)", "rgba(143,50,1)", "rgba(153,205,100)","rgba(80,80,100)"],  
         },  
         
         ],  
     },  
     }); 
-                    $('#demo').attr('data-bss-chart',`{"type":"line","data="}`)
                     result.isloggedin==false?window.location.href='.../index.php':true
                 }
 

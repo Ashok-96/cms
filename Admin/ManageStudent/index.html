@@ -1,209 +1,238 @@
-                <!DOCTYPE html>
-                <html lang="en" style="font-family: ABeeZee, sans-serif;">
+    <!DOCTYPE html>
+    <html lang="en" style="font-family: ABeeZee, sans-serif;">
 
-                <head>
-                    <meta charset="utf-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-                    <title>Students</title>
-                    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
-                    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-                    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-                    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-                    <link rel="stylesheet" href="assets/css/Sign-Up-Form---Gabriela-Carvalho.css">
-                    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-                    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-                    <link rel="stylesheet" href="assets/css/aos.min.css">
-                    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
-                </head>
-
-                <body id="page-top" style="font-family: ABeeZee, sans-serif;">
-                    <div id="wrapper">
-                        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-dark p-0" data-aos="fade-right" style="color: rgb(222,223,230);">
-                            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                                    <div class="sidebar-brand-icon rotate-n-15"></div>
-                                    <div class="sidebar-brand-text mx-3"><span>cms</span></div>
-                                </a>
-                                <hr class="sidebar-divider my-0">
-                                <ul class="navbar-nav text-light" id="accordionSidebar">
-                                        <li class="nav-item"><a class="nav-link " href="../home/"><i class="fa fa-dashboard" style="font-size: 18px;"></i><span>&nbsp;Dashboard</span></a></li>
-                                    <li class="nav-item"><a class="nav-link active" href="../ManageStudent/"><i class="fas fa-users"></i><span>&nbsp;Students</span></a></li>
-                                    <li class="nav-item"><a class="nav-link" href="../ManageTeacher/"><i class="far fas fa-chalkboard-teacher"></i><span>&nbsp;Teachers</span></a></li>
-                                    <li class="nav-item"><a class="nav-link" href="../Depeartments/"><i class="fas fa-building"></i><span>&nbsp;Departments</span></a></li>
-                                    <li class="nav-item"><a class="nav-link" href="../Combinations/"><i class="fas fa-terminal"></i><span>&nbsp;Combinations</span></a></li>
-                                    <li class="nav-item"><a class="nav-link" href="../Classes/"><i class="fas fa-chalkboard"></i>&nbsp;Classes</span></a></li>
-                                </ul>
-                                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
-                            </div>
-                        </nav>
-                        <div class="d-flex flex-column" id="content-wrapper">
-                            <div data-aos="fade-down" id="content" style="border-radius: 8px;border-left-width: 3px;border-left-color: var(--bs-blue);background: var(--bs-navbar-active-color);">
-                                <nav class="navbar navbar-gradient-dark navbar-expand bg-dark text-white shadow mb-4 topbar static-top navbar-dark" >
-                                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
-                                        <h3 class="text-white mb-0">Hello, Admin</h3>
-                                        <nav class="navbar navbar-light navbar-expand-md py-3">
-                                            <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                                                <div class="collapse navbar-collapse" id="navcol-2">
-                                                    <ul class="navbar-nav ms-auto">
-                                                        
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </nav>
-                                        
-                                        <ul class="navbar-nav flex-nowrap ms-auto">
-                                            <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
-                                    
-                                                </div>
-                                            </li>
-                                            <li class="nav-item dropdown no-arrow mx-1"></li>
-                                            <li class="nav-item dropdown no-arrow mx-1">
-                                                <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
-                                            </li>
-                                            <div class="d-none d-sm-block topbar-divider"></div>
-                                            <li class="nav-item dropdown no-arrow"></li>
-                                        </ul><i class="icon ion-power" style="font-size: 19px;"></i><a href="../logout/". style="color: white;padding-left: 1.9px;"><strong>Logout</strong></a>
-                                    </div>
-                                </nav>
-                                <div class="container-fluid" >
-                                    <div class="alert alert-success alert-dismissible fade show" role="alert" id="success" style="display: none;">
-                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-                                        Task Completed
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>
-                                    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="error" style="display: none;">
-                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                                        Something went wrong!
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>
-
-        <!-- Button trigger modal -->
-        <button type="button" class="btn col-1 btn-primary" id="modalt" >
-            <span><i class="fa fa-user-plus" aria-hidden="true">&nbsp;</i>Add Stuent</span>
-        </button>
-        
-        <!-- Modal -->
-        <div class="container p-3"  id="exampl"  style="display: none ">
-            
-                <form method="post" action="./add_user.php" class="p-3" >
-                        <hr>
-                        <input type="text" placeholder="Enter Firstname" name="Firstname" required="">
-                        <input type="text" placeholder="Enter Lastname" name="Lastname" required="">
-                        <input type="text" placeholder="Enter phone" name="phone" required="" pattern="[0-9]{10}">
-                        <input type="radio" name="gender" value="Male"><label for="gender">&nbsp;Male</label>
-                        <input type="radio" name="gender" value="Female"> <label for="gender">&nbsp;Female</label>
-
-                        <input type="text" placeholder="Enter semester" name="semester" required="">
-                        <input type="text" placeholder="Enter combination" name="combination" required="">
-                        <input type="text" placeholder="Enter username" name="username" required="">
-                        <input type="password" placeholder="Enter password" name="password" required="">
-                        <div class="gc-clearfix">
-    <button class="gc-cancelbtn" type="button" style="margin: 9px -1px;width: 120px;margin-right: 87px;" id="Cancel">Cancel</button>
-    <button class="gc-signupbtn" type="submit" name="submit" style="padding: 15px 28px;width: 121px;height: 52px;">Sign Up</button></div>
-                </form>
-                <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        
-            
-            </div>
+    <head>
         
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-                                                <table class="table table-sm table-bordered" id="dataTable">
-                                                    <thead class="bg-gradient-dark text-center text-white">
-                                                        <tr>
-                                                            <th>Firstname</th>
-                                                            <th>Lastname</th>
-                                                            <th>combination</th>
-                                                            <th>Semester</th>
-                                                            <th>Register_Number</th>
-                                                            <th >Phone</th>
-                                                            <th >Action</th>
 
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody id="data">
-                                                        
-                                                    </tbody>
-                                                </table>
-                                                    </div>
-                                                <div class="containser">
-                                                </div>  
-                                                
-                                                <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-                                                    <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
-                                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                                                    </symbol>
-                                                    <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
-                                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-                                                    </symbol>
-                                                    <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-                                                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                                                    </symbol>
-                                                </svg>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
+        <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+        <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+        <link rel="stylesheet" href="assets/css/aos.min.css">
+        <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
+
+    </head>
+
+    <body id="page-top" style="font-family: ABeeZee, sans-serif;">
+        <div id="wrapper">
+            <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-dark p-0" data-aos="fade-right" style="color: rgb(222,223,230);">
+                <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                        <div class="sidebar-brand-icon rotate-n-15"></div>
+                        <div class="sidebar-brand-text mx-3"><span>cms</span></div>
+                    </a>
+                    <hr class="sidebar-divider my-0">
+                    <ul class="navbar-nav text-light" id="accordionSidebar">
+                        <li class="nav-item"><a class="nav-link " href="../home/"><i class="fa fa-dashboard" style="font-size: 18px;"></i><span>&nbsp;Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../ManageStudent/"><i class="fas fa-users"></i><span>&nbsp;Students</span></a></li>
+                    <li class="nav-item"><a class="nav-link " href="../ManageTeacher/"><i class="far fas fa-chalkboard-teacher"></i><span>&nbsp;Teachers</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Depeartments/"><i class="fas fa-building"></i><span>&nbsp;Departments</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Combinations/"><i class="fas fa-terminal"></i><span>&nbsp;Combinations</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Classes/"><i class="fas fa-chalkboard"></i>&nbsp;Classes</span></a></li>
+                </ul>
+                    <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+                </div>
+            </nav>
+            <div class="d-flex flex-column" id="content-wrapper">
+                <div data-aos="fade-down" id="content" style="border-radius: 8px;border-left-width: 3px;border-left-color: var(--bs-blue);background: var(--bs-navbar-active-color);">
+                    <nav class="navbar navbar-gradient-dark navbar-expand bg-dark text-white shadow mb-4 topbar static-top navbar-dark" >
+                        <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                            <h3 class="text-white mb-0">Hello, Admin</h3>
+                            <nav class="navbar navbar-light navbar-expand-md py-3">
+                                <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                                    <div class="collapse navbar-collapse" id="navcol-2">
+                                        <ul class="navbar-nav ms-auto">
                                             
-                                                
-                </body>
-            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-            <script src="assets/js/aos.min.js"></script>
-            <script src="assets/js/chart.min.js"></script>
-            <script src="assets/js/bs-init.js"></script>
-            <script src="assets/js/theme.js"></script>
-            <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-            <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
-            <script>
-            $(document).ready(function(){
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                            <ul class="navbar-nav flex-nowrap ms-auto">
+                                <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                                        <form class="me-auto navbar-search w-100">
+                                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                                <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown no-arrow mx-1"></li>
+                                <li class="nav-item dropdown no-arrow mx-1">
+                                    <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
+                                </li>
+                                <div class="d-none d-sm-block topbar-divider"></div>
+                                <li class="nav-item dropdown no-arrow"></li>
+                            </ul><i class="icon ion-power" style="font-size: 19px;"></i><a href="../logout/". style="color: white;padding-left: 1.9px;"><strong>Logout</strong></a>
+                        </div>
+                    </nav>
+                    <div class="container-fluid">
+                        <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                            <h3 class="text-dark mb-0">Dashboard</h3>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert" id="success" style="display: none;">
+                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                                Task Completed
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert" id="error" style="display: none;">
+                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                Something went wrong!
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Add student <i class="fas fa-user-plus"></i>
+                          </button>
+                          
+                          <table class="table table-sm table-bordered" id="dataTable">
+                            
+                            <thead class="bg-gradient-dark text-center text-white">
+                                <tr>
+                                    <th>Slno</th>
+                                    <th>Registered date</th>
+                                    <th>Firstname</th>
+                                    <th>Lastname</th>
+                                    <th>Combination</th>
+                                    <th>Semester</th>
+                                    <th>Phone</th>
 
-                $("#modalt").click(function(){
-                    $("#exampl").fadeIn('1500')
-                
-                })
-                $("#Cancel").click(function(){
-                    $("#exampl").fadeOut('1500')
-                
-                })
-                let sPageURL = window.location.search.substring(1)
+                                    <th >Action</th>
 
-                if(sPageURL.length>0){
-                    let flag=sPageURL.split('=')[1]
-                    if(flag=='success'){
-                        $('#success').css({
-                            'display':'block'
-                        })
-                    $('.btn-close').click(()=>window.location.href='./')
-                    }else if(flag=='error'){
-                        $('#error').css({
-                            'display':'block'
-                        })
-                    $('.btn-close').click(()=>window.location.href='./')
+                                </tr>
+                            </thead>
+                            <tbody id="data">
+                                
+                            </tbody>
+                        </table>
+                        </div>
+                        
+                    </div>
+                 
+                </div>
+                </div>
+                <!-- Button trigger modal -->
 
-                    }
-                }
-                $.ajax({
-                    method:'POST',
-                    url:'./students.php',
-                    data:{'Students':true},
-                    success:function(e){
-                        $("#u_combination").html('')
-                        let result=JSON.parse(e)
-                        $("#data").html()
-                        for(let i=0;i<result.Firstname.length;i++){
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-dark" id="exampleModalLabel">Add student <i class="fas fa-user-plus"></i></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="./students.php" method="post" >
+                <div class="from-group p-2">
+                    <label class="text-dark " for="Date">Date</label>
+                    <input type="date" class="form-control" name="Date" required >
+                </div>
+                <div class="from-group p-2">
+                    <label class="text-dark " for="Firstname">Firstname</label>
+                    <input type="text" class="form-control" name="Firstname" required >
+                </div>
+                <div class="from-group p-2">
+                    <label class="text-dark m-1" for="Lastname">Lastname</label>
+                    <input type="text" class="form-control" name="Lastname" required >
+                </div>
+                <div class="from-group p-2">
+                    <label class="text-dark m-1" for="Gender">Gender</label><br>
 
-            $("#data").append(`<tr><td>${result.Firstname[i]}</td><td>${result.Lastname[i]}</td><td>${result.Combination[i]}</td><td>${result.semester[i]}</td><td>${result.reg_no[i]}</td>
-                <td>${result.Phone[i]}</td><td><a href="./Edit/index.html?id=${result.id[i]}" class="btn btn-outline-primary "><i class="fa fa-cog">&nbsp;</i></a>&nbsp;<a href="./Delete/index.php?id=${result.id[i]}" class="btn btn-outline-danger "><i class="fa fa-trash">&nbsp;</i></a></td></tr>
-                    <!-- Button trigger modal -->
-            `)
-            }
-            $("#combination").html()
-            result.u_combinations.map(e=> $("#combination").append(`<option value='${e}'>${e}<?option>`))
-                $('#dataTable').DataTable();
+                    <input type="radio" class="" name="Gender" value="Female" required >&nbsp;Female
+                    <input type="radio" class="" name="Gender" value="Male" required >&nbsp;Male
 
-                }      
-                })
-                })
-
-            </script>
-            </html>
+                </div>
+                <div class="from-group p-2">
+                    <label class="text-dark m-1" for="Lastname">Combination</label>
+                    <select class="form-control" name="combination" id="combination_list" required>
+                    </select>
+                </div>
+                <div class="from-group p-2">
+                    <label class="text-dark m-1" for="Lastname">Semester</label>
+                <select class="form-control" name="Semester" >
+                    <option value="#N/A">---Select Semester---</option>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
+                    <option value="VI">VI</option>
+                    <option value="VII">VII</option>
+                    <option value="VIII">VIII</option>
+                    </select>
+                </div>
+                <div class="from-group p-2">
+                    <label class="text-dark m-1" for="phone">phone</label>
+                    <input type="text" class="form-control" name="phone" pattern="^\+91\-[0-9]{10}" required>
+                </div>
+                <div class="from-group p-2">
+                    <label class="text-dark m-1" for="username">username</label>
+                    <input type="text" class="form-control" name="username" pattern="^[a-z]{5,}" required>
+                </div>
+                <div class="from-group p-2">
+                    <label class="text-dark m-1" for="password">password</label>
+                    <input type="password" class="form-control" name="password"  required>
+                </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" name="save" class="btn btn-primary">Save changes</button>
+        </div> 
+    </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-dark" id="exampleModalLabel">Delete&nbsp;<i class="fas fa-trash"></i></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-dark">
+          Are you sure you want to remove the <span id="firstname"></span>'s record!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+          <a id="confirm" href="#" class="btn btn-danger">Yes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+    </symbol>
+    <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+    </symbol>
+    <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+    </symbol>
+</svg>
+  
+            </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        </div>
+        
+        
+    </body>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.min.js"></script>
+    <script src="assets/js/chart.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/index.js"></script>
+    </html>

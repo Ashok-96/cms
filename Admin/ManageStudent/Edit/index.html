@@ -28,11 +28,11 @@
 <hr class="sidebar-divider my-0">
 <ul class="navbar-nav text-light" id="accordionSidebar">
     <li class="nav-item"><a class="nav-link " href="../../home/"><i class="fa fa-dashboard" style="font-size: 18px;"></i><span>&nbsp;Dashboard</span></a></li>
-<li class="nav-item"><a class="nav-link active" href="../../ManageStudent/"><i class="fas fa-users"></i><span>&nbsp;Students</span></a></li>
-<li class="nav-item"><a class="nav-link" href="login.html"><i class="far fas fa-chalkboard-teacher"></i><span>&nbsp;Teachers</span></a></li>
-<li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-building"></i><span>&nbsp;Departments</span></a></li>
-<li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-terminal"></i><span>&nbsp;Combinations</span></a></li>
-<li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-chalkboard"></i>&nbsp;Classes</span></a></li>
+<li class="nav-item"><a class="nav-link " href="../../ManageStudent/"><i class="fas fa-users"></i><span>&nbsp;Students</span></a></li>
+<li class="nav-item"><a class="nav-link active" href="../../ManageTeacher/"><i class="far fas fa-chalkboard-teacher"></i><span>&nbsp;Teachers</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../../Depeartments/"><i class="fas fa-building"></i><span>&nbsp;Departments</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../../Combinations/"><i class="fas fa-terminal"></i><span>&nbsp;Combinations</span></a></li>
+<li class="nav-item"><a class="nav-link" href="../../Classes/"><i class="fas fa-chalkboard"></i>&nbsp;Classes</span></a></li>
 </ul>
 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
 </div>
@@ -95,8 +95,8 @@
         </div>
         <div class="row">
             <div class="col">
-                <div class="mb-3"><label class="form-label" for="Combination"><strong>Combination</strong></label></div>
-                <select class="form-select" name="Combination"style="margin: 0px;margin-top: -16px;">
+                <div class="mb-3"><label class="form-label" for=""><strong>Departments</strong></label></div>
+                <select class="form-select" name="Departments"style="margin: 0px;margin-top: -16px;">
                     <optgroup label="Combination" id="Combination_list">
                     </optgroup>
                 </select>
@@ -141,8 +141,8 @@
         let result=JSON.parse(e)
         $("#Firstname").val(result.result.Firstname)
         $("#Lastname").val(result.result.Lastname)
-        $('optgroup').attr('label',result.result.Combination)
-        result.combinations.map(e=>$('optgroup').append(`<option value='${e}'>${e}</option>`))
+        $('optgroup').attr('label',result.result.combination)
+        result.combination.map(e=>$('optgroup').append(`<option value='${e}'>${e}</option>`))
     }
     })
 

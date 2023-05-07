@@ -9,7 +9,7 @@ $db = new DButil();
 
 if (isset($_GET)) {
 
-    $sql = "DELETE FROM `registration` WHERE `id`='".$_GET["id"]."'";
+   $sql = "DELETE FROM `registration` WHERE `id`='".$_GET["id"]."'";
 
     $result = $db->queryRequest($sql);
 
