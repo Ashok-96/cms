@@ -6,7 +6,7 @@ include('../../Common files/db/dbutil.php');
 $db=new dbutil();
 $sql="SELECT COUNT(`Firstname`)  FROM `registration`;";
 $sql.="SELECT COUNT(DISTINCT(`combination`)) FROM `combinations`;";
-$sql.="SELECT COUNT(DISTINCT(`department`)) FROM `teachers`;";
+$sql.="SELECT COUNT(DISTINCT(`department`)) FROM `departments`;";
 $sql.="SELECT COUNT(`Firstname`) FROM `teachers`;";
 
 

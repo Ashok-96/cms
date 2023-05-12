@@ -5,7 +5,7 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
             <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1063/1063385.png?w=360" class="rel">
-            <title>Teachers</title>
+            <title>Teacher's Dashboard</title>
             <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
@@ -31,43 +31,22 @@
                                 <li class="nav-item"><a class="nav-link " href="../home/"><i class="fa fa-dashboard" style="font-size: 18px;"></i><span>&nbsp;Dashboard</span></a></li>
                             <li class="nav-item"><a class="nav-link " href="../ManageStudent/"><i class="fas fa-users"></i><span>&nbsp;Students</span></a></li>
                             <li class="nav-item"><a class="nav-link active" href="../ManageTeacher/"><i class="far fas fa-chalkboard-teacher"></i><span>&nbsp;Teachers</span></a></li>
-                            <li class="nav-item"><a class="nav-link" href="../Depeartments/"><i class="fas fa-building"></i><span>&nbsp;Departments</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="../Departments/"><i class="fas fa-building"></i><span>&nbsp;Departments</span></a></li>
                             <li class="nav-item"><a class="nav-link" href="../Combinations/"><i class="fas fa-terminal"></i><span>&nbsp;Combinations</span></a></li>
                             <li class="nav-item"><a class="nav-link" href="../Classes/"><i class="fas fa-chalkboard"></i>&nbsp;Classes</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="../Configuration/"><i class="fas fa-cog"></i>&nbsp;Configurations</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="../logout/"><i class="icon ion-power"></i>&nbsp;Logout</span></a></li>
+
                         </ul>
                         <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
                     </div>
                 </nav>
                 <div class="d-flex flex-column" id="content-wrapper">
                     <div data-aos="fade-down" id="content" style="border-radius: 8px;border-left-width: 3px;border-left-color: var(--bs-blue);background: var(--bs-navbar-active-color);">
-                        <nav class="navbar navbar-gradient-dark navbar-expand bg-dark text-white shadow mb-4 topbar static-top navbar-dark" >
-                            <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
-                                <h3 class="text-white mb-0">Hello, Admin</h3>
-                                <nav class="navbar navbar-light navbar-expand-md py-3">
-                                    <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                                        <div class="collapse navbar-collapse" id="navcol-2">
-                                            <ul class="navbar-nav ms-auto">
-                                                
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </nav>
-                                <ul class="navbar-nav flex-nowrap ms-auto">
-                                    <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
-                                        <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
-                            
-                                        </div>
-                                    </li>
-                                    <li class="nav-item dropdown no-arrow mx-1"></li>
-                                    <li class="nav-item dropdown no-arrow mx-1">
-                                        <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
-                                    </li>
-                                    <div class="d-none d-sm-block topbar-divider"></div>
-                                    <li class="nav-item dropdown no-arrow"></li>
-                                </ul><i class="icon ion-power" style="font-size: 19px;"></i><a href="../logout/". style="color: white;padding-left: 1.9px;"><strong>Logout</strong></a>
-                            </div>
-                        </nav>
+                       
                         <div class="container-fluid" >
+                            <h3 class="text-dark mt-4">Manage Teachers</h3>
+                            
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Add Teacher <i class="fas fa-user-plus"></i>
                               </button>
@@ -82,8 +61,8 @@
                                 Something went wrong!
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
-                                        <table class="table table-sm table-bordered" id="dataTable">
-                                            <thead class="bg-gradient-dark text-center text-white">
+                                        <table class="table table-sm table-bordered table-striped border-secondary" id="dataTable" style="width:80%">
+                                            <thead class="bg-gradient-primary text-center text-white">
                                                 <tr>
                                                     <th>Firstname</th>
                                                     <th>Lastname</th>
@@ -116,7 +95,7 @@
                         <div class="modal-dialog modal-lg">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h1 class="modal-title fs-5 text-dark" id="exampleModalLabel">Add student <i class="fas fa-user-plus"></i></h1>
+                              <h1 class="modal-title fs-5 text-dark" id="exampleModalLabel">Add Teacher <i class="fas fa-user-plus"></i></h1>
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
@@ -171,5 +150,6 @@
     <script src="assets/js/theme.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    
     <script src="assets/js/index.js"></script>
     </html>

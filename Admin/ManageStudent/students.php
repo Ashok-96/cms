@@ -3,7 +3,7 @@ $op=[];
 include('../../Common files/db/dbutil.php');
 $db=new DButil();
 if (isset($_POST['Teachers'])) {
-  $sql="SELECT * FROM `registration`";
+  $sql="SELECT * FROM `registration` ORDER BY `Firstname` ASC";
   $res=$db->queryRequest($sql);
 while($row=$res->fetch_assoc()){
     $op['id'][]=$row['id'];

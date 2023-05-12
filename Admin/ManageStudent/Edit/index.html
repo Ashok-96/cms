@@ -95,8 +95,8 @@
         </div>
         <div class="row">
             <div class="col">
-                <div class="mb-3"><label class="form-label" for=""><strong>Departments</strong></label></div>
-                <select class="form-select" name="Departments"style="margin: 0px;margin-top: -16px;">
+                <div class="mb-3"><label class="form-label" for=""><strong>combinations</strong></label></div>
+                <select class="form-select" name="combination" id="combination"style="margin: 0px;margin-top: -16px;">
                     <optgroup label="Combination" id="Combination_list">
                     </optgroup>
                 </select>
@@ -141,11 +141,19 @@
         let result=JSON.parse(e)
         $("#Firstname").val(result.result.Firstname)
         $("#Lastname").val(result.result.Lastname)
+        $("#combination").val(result.result.combination)
+
         $('optgroup').attr('label',result.result.combination)
-        result.combination.map(e=>$('optgroup').append(`<option value='${e}'>${e}</option>`))
+
+        result.combination.map(e=>e==result.result.combination?$('optgroup').append(`<option value='${e}' selected>${e}</option>`):$('optgroup').append(`<option value='${e}' >${e}</option>`))
+        
     }
     })
-
+   $("#combination").change(function(){
+    let comb=$("#combination option:selected").val()
+    console.log(comb)
+            $("#combination").val(comb);
+        })
     })
 
     </script>
